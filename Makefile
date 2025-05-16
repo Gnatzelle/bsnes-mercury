@@ -507,7 +507,7 @@ OBJECTS := $(SOURCES_CXX:.cpp=.o) $(SOURCES_C:.c=.o)
 all: $(TARGET)
 
 ifeq ($(DEBUG),0)
-   FLAGS += -O3 $(EXTRA_GCC_FLAGS)
+   FLAGS += -march=native -mtune=native -mfpmath=sse -O3 -pipe $(EXTRA_GCC_FLAGS)
 else
    FLAGS += -O0 -g
 endif
